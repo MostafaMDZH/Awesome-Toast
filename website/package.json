@@ -1,0 +1,27 @@
+{
+  "name": "awesome-toast-website",
+  "description": "Demo and documentation for Awesome Toast npm package",
+  "version": "0.1.0",
+  "author": "Mostafa Mohammadzadeh",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "lint": "next lint",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "awesome-toast": "^1.0.1",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.54.0",
+    "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3"
+  }
+}
