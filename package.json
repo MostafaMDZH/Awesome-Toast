@@ -1,0 +1,42 @@
+{
+  "name": "awesome-toast",
+  "description": "React, Javascript, and Typescript compatible toast.",
+  "version": "1.0.0",
+  "author": "Mostafa Mohammadzadeh",
+  "license": "MIT",
+  "main": "src/toast.js",
+  "types": "src/toast.d.ts",
+  "scripts": {
+    "test": "jest",
+    "test-cov": "jest --coverage",
+    "deploy": "npm publish || cd website && npm run build && npm run export && cd .. && find website/out -type d -exec chmod 755 {} \\; && find website/out -type f -exec chmod 644 {} \\; && git add -A && git commit -m \"[deployment auto commit]\" && git ftp push"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "keywords": [
+    "toast",
+    "react",
+    "next",
+    "nextjs",
+    "javascript",
+    "typescript",
+    "component",
+    "module",
+    "ui",
+    "ts",
+    "js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MostafaMDZH/Awesome-Toast.git"
+  },
+  "homepage": "https://awesome-toast.demos.mostafa-mdzh.ir",
+  "bugs": {
+    "url": "https://github.com/MostafaMDZH/Awesome-Toast/issues"
+  }
+}
