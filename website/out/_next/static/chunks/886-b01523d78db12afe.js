@@ -1,104 +1,55 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[781],{2882:function(a){"use strict";a.exports=(a,c)=>new b(Object.assign({message:a},c));class b{constructor(a){var c;b.appendCSS(),this.viewID=b.generateViewID();let d=b.getDOM(this.viewID);document.body.appendChild(d),this.view=document.getElementById(this.viewID.toString())||document.createElement("div"),this.setMessage(this.message=a.message),this.setPosition(this.position=a.position||b.DEFAULT_POSITION),this.setTheme(a.theme),this.setIconSrc(a.iconSrc),this.setStyle(a.style),this.setActionText(a.actionText),this.setActionCallback(a.onAction),this.timeout=null!==(c=a.timeout)&& void 0!==c?c:b.DEFAULT_HIDING_TIMEOUT,this.isWaitingForHide=!1,this.afterHide=a.afterHide,this.setHideEvents(),this.show()}static appendCSS(){if(null===document.getElementById("toast-style")){let a=document.head||document.getElementsByTagName("head")[0],b=document.createElement("style");b.id="toast-style",a.appendChild(b),b.appendChild(document.createTextNode(c))}}static generateViewID(){let a=Math.floor(1e9*Math.random())+1e8;return null===document.getElementById(a.toString())?a:b.generateViewID()}static getDOM(a){let b=`
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[886],{7967:function(a){"use strict";a.exports=(a,c)=>new b(Object.assign({message:a},c));class b{constructor(a){var c,d;this.bornTime=Date.now(),this.eventHandler=this.onHideEvent.bind(this),b.appendCSS(),this.viewID=b.generateViewID();let e=b.getDOM(this.viewID);document.body.appendChild(e),this.view=document.getElementById(this.viewID.toString())||document.createElement("div"),this.setMessage(this.message=a.message),this.setPosition(this.position=a.position||b.DEFAULT_POSITION),this.setTheme(a.theme),this.setStyle(a.style),this.waitForEvent=null!==(c=a.waitForEvent)&& void 0!==c&&c,this.timeout=null!==(d=a.timeout)&& void 0!==d?d:b.DEFAULT_HIDING_TIMEOUT,this.isWaitingForHide=!1,this.afterHide=a.afterHide,this.addHideEventListener(),this.waitForEvent||this.startHidingTimer(this.timeout),this.show()}static appendCSS(){if(null===document.getElementById("toast-style")){let a=document.head||document.getElementsByTagName("head")[0],b=document.createElement("style");b.id="toast-style",a.appendChild(b),b.appendChild(document.createTextNode(c))}}static generateViewID(){let a=Math.floor(1e9*Math.random())+1e8;return null===document.getElementById(a.toString())?a:b.generateViewID()}static getDOM(a){let b=`
             <div class="toast" id="${a}">
                 <div class="container">
-                    <span class='icon'></span>
                     <p class="message"></p>
-                    <input type="button" class="actionButton" id="${a}_actionButton" value="">
                 </div>
             </div>
-        `,c=document.createElement("div");return c.innerHTML=b.trim(),c.firstChild||c}setMessage(a){this.message=a;this.view.getElementsByClassName("message")[0].innerHTML=this.message}setPosition(a){this.position=a,this.view.classList.remove("bottom-left"),this.view.classList.remove("bottom-center"),this.view.classList.remove("bottom-right"),this.view.classList.remove("top-left"),this.view.classList.remove("top-center"),this.view.classList.remove("top-right"),this.view.classList.add(a),b.adjustListPositions(this)}setIconSrc(a){if(void 0===a)return;this.iconSrc=a;let b=this.view.getElementsByClassName("icon")[0];b.style.setProperty("display","block"),b.style.setProperty("background-image","url("+this.iconSrc+")")}setTheme(a){void 0!==a&&(this.theme,this.view.classList.remove("light"),this.view.classList.remove("dark"),this.view.classList.add(a))}setStyle(a){if(void 0!==a)for(let[b,c]of(this.style=a,Object.entries(this.style))){let d=document.getElementById(this.viewID.toString()).getElementsByClassName(b)[0];if(void 0!==d)for(let e of c)d.style.setProperty(e[0],e[1])}}setActionText(a){if(void 0===a)return;this.actionText=a;let b=this.view.getElementsByClassName("actionButton")[0];b.style.setProperty("display","block"),b.value=this.actionText}setActionCallback(a){this.onAction=a;this.view.getElementsByClassName("actionButton")[0].addEventListener("click",()=>{void 0!==this.onAction&&this.onAction(),this.hide()})}setHideEvents(){let a=this;"mousemove mousedown mouseup touchmove click keydown keyup".split(" ").forEach(function(b){window.addEventListener(b,()=>{a.startHidingTimer()})})}show(){setTimeout(()=>{b.List.push(this),b.adjustListPositions(this)},10)}startHidingTimer(){this.timeout>0&&!this.isWaitingForHide&&(this.isWaitingForHide=!0,setTimeout(()=>{this.hide()},this.timeout))}hide(){let a=this;b.List.filter(a=>a.position===this.position).length>1?(this.view.style.opacity="0",this.position.indexOf("bottom")>=0?this.view.style.marginBottom="-"+(this.getHeight()+5)+"px":this.view.style.marginTop="-"+(this.getHeight()+5)+"px"):this.position.indexOf("bottom")>=0?this.view.style.bottom="-"+(this.getHeight()+15)+"px":this.view.style.top="-"+(this.getHeight()+15)+"px";let c=b.List.indexOf(this);c> -1&&b.List.splice(c,1),b.adjustListPositions(this),setTimeout(function(){a.view.remove(),void 0!==a.afterHide&&a.afterHide()},500)}static adjustListPositions(a){let c=b.List.filter(b=>b.position===a.position);c.forEach(function(b,d){let e=20+(c.length-d-1)*(b.getHeight()+5)+"px";a.position.indexOf("bottom")>=0?(b.view.style.bottom=e,b.view.style.top="unset"):(b.view.style.top=e,b.view.style.bottom="unset")})}getHeight(){return+getComputedStyle(this.view).height.replace("px","")}}b.List=[],b.DEFAULT_HIDING_TIMEOUT=4e3,b.DEFAULT_POSITION="bottom-left";let c=`
+        `,c=document.createElement("div");return c.innerHTML=b.trim(),c.firstChild||c}setMessage(a){this.message=a;this.view.getElementsByClassName("message")[0].innerHTML=this.message}setPosition(a){this.position=a,this.view.classList.remove("bottom"),this.view.classList.remove("top"),this.view.classList.add(a)}setTheme(a){void 0!==a&&(this.theme,this.view.classList.remove("light"),this.view.classList.remove("dark"),this.view.classList.add(a))}setStyle(a){if(void 0!==a)for(let[b,c]of(this.style=a,Object.entries(this.style))){let d=document.getElementById(this.viewID.toString()).getElementsByClassName(b)[0];if(void 0!==d)for(let e of c)d.style.setProperty(e[0],e[1])}}addHideEventListener(){let a=this;"mousemove mousedown mouseup touchmove click keydown keyup".split(" ").forEach(b=>{window.addEventListener(b,a.eventHandler)})}removeHideEventListener(){let a=this;"mousemove mousedown mouseup touchmove click keydown keyup".split(" ").forEach(b=>{window.removeEventListener(b,a.eventHandler)})}onHideEvent(){let a=this.timeout;Date.now()-this.bornTime>this.timeout&&(a=this.timeout/3),this.startHidingTimer(a),this.removeHideEventListener()}show(){let a=this;setTimeout(()=>{a.view.classList.add("visible")},50)}startHidingTimer(a){this.timeout>0&&!this.isWaitingForHide&&(this.isWaitingForHide=!0,setTimeout(()=>{this.hide()},a))}hide(){this.view.classList.remove("visible");let a=this;setTimeout(()=>{a.view.remove(),void 0!==a.afterHide&&a.afterHide()},800)}}b.DEFAULT_HIDING_TIMEOUT=4e3,b.DEFAULT_POSITION="bottom";let c=`
 .toast {
     position: fixed;
-    transition: top 400ms ease 0s, bottom 400ms ease 0s, margin-top 300ms ease 0s, margin-bottom 300ms ease 0s, opacity 150ms ease 150ms;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: top 400ms ease-in-out 0s, bottom 400ms ease-in-out 0s, opacity 500ms ease-in-out 0ms;
   }
   .toast > .container {
     box-sizing: border-box;
-    max-width: 450px;
-    min-height: 46px;
-    padding: 10px 20px;
-    border-radius: 3px;
+    max-width: 350px;
+    border-radius: 23px;
     background-color: rgb(58, 58, 58);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
-    display: flex;
-    color: rgb(250, 250, 250);
-    align-items: center;
-    gap: 10px;
-    transition: all 150ms ease-in-out;
-  }
-  .toast > .container * {
-    box-sizing: border-box;
-  }
-  .toast > .container > .icon {
-    width: 20px;
-    height: 20px;
-    margin-left: -3px;
-    margin-right: -2px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: none;
+    overflow: hidden;
   }
   .toast > .container > .message {
-    font-size: 0.87rem;
-  }
-  .toast > .container > .actionButton {
-    height: 100%;
-    padding: 5px 3px;
-    background-color: transparent;
-    font-size: 0.87rem;
-    color: #F7FF00;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    display: none;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9375rem;
+    color: rgb(240, 240, 240);
+    margin: 0;
   }
   
-  .toast.bottom-left {
-    left: 24px;
-    bottom: -60px;
+  .toast.visible {
+    opacity: 1;
   }
   
-  .toast.bottom-center {
-    left: 50%;
-    bottom: -60px;
-    transform: translate(-50%, 0);
+  .toast.bottom {
+    bottom: 25px;
   }
   
-  .toast.bottom-right {
-    right: 24px;
-    bottom: -60px;
-  }
-  
-  .toast.top-left {
-    left: 24px;
-    top: -60px;
-  }
-  
-  .toast.top-center {
-    left: 50%;
-    top: -60px;
-    transform: translate(-50%, 0);
-  }
-  
-  .toast.top-right {
-    right: 24px;
-    top: -60px;
+  .toast.top {
+    top: 25px;
   }
   
   .toast.light > .container {
     background-color: #fbfbfb;
-    color: #5f5f5f;
   }
-  .toast.light > .container > .actionButton {
-    color: #D60;
+  .toast.light > .container > .message {
+    color: #555;
   }
   
   @media only screen and (max-width: 500px) {
     .toast {
-      max-width: calc(100% - 48px);
-    }
-    .toast.top-center,
-  .toast.bottom-center {
       width: calc(100% - 24px);
       max-width: unset;
       left: 12px;

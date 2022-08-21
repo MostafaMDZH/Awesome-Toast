@@ -266,7 +266,7 @@ export default function Main(){
 
                         {/* wait-for-event */}
                         <h3 className='sectionName' id='wait-for-event'><a href='#wait-for-event'># Wait For Event</a></h3>
-                        <p className='sectionDescription'>By default, a Toast doesn't wait for any user events to hide, but if you want to ensure that the user has seen your message, you can enable this feature with waitForEvent parameter, so until the user does not interact with the page, the Toast doesn't hide.</p>
+                        <p className='sectionDescription'>By default, a Toast doesn&apos;t wait for any user events to hide, but if you want to ensure that the user has seen your message, you can enable this feature with waitForEvent parameter, so until the user does not interact with the page, the Toast doesn&apos;t hide.</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => {
