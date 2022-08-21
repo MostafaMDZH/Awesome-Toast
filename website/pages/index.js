@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Cookies from 'universal-cookie';
 import Link from 'next/link'
-import Toast from 'awesome-toast';
+import Toast from 'awesome-toast-component';
 
 let isWelcomeTstShow = false;
 let Tst = null;
