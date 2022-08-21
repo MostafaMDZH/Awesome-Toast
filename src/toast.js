@@ -154,7 +154,7 @@ const Style = `
     left: 50%;
     transform: translate(-50%, 0);
     opacity: 0;
-    transition: top 400ms ease-in-out 0s, bottom 400ms ease-in-out 0s, opacity 600ms ease-in-out 0ms;
+    transition: top 400ms ease-in-out 0s, bottom 400ms ease-in-out 0s, opacity 500ms ease-in-out 0ms;
   }
   .toast > .container {
     box-sizing: border-box;
