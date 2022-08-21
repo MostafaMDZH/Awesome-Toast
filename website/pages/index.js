@@ -112,12 +112,12 @@ export default function Main(){
                         <p className='step'><a className='bold'>{'>'} step 1 : </a>you can use either npm or yarn, or import the main file with the script tag</p>
                         <div className='codeWrapper'>
                             <p className='comment'># npm</p>
-                            <button className='codeSection copyable' onClick={()=>copyTextToClipboard('npm i awesome-toast --save')}>
-                                <p>npm i <span>awesome-toast</span></p>
+                            <button className='codeSection copyable' onClick={()=>copyTextToClipboard('npm i awesome-toast-component')}>
+                                <p>npm i <span>awesome-toast-component</span></p>
                             </button>
                             <p className='comment'># yarn</p>
-                            <button className='codeSection copyable' onClick={()=>copyTextToClipboard('yarn add awesome-toast')}>
-                                <p>yarn add <span>awesome-toast</span></p>
+                            <button className='codeSection copyable' onClick={()=>copyTextToClipboard('yarn add awesome-toast-component')}>
+                                <p>yarn add <span>awesome-toast-component</span></p>
                             </button>
                             <p className='comment'>
                                 # html (download the toast.js file from the&nbsp;
@@ -131,8 +131,8 @@ export default function Main(){
                         <p className='step'><a className='bold'>{'>'} step 2 : </a>include the package in your code</p>
                         <div className='codeWrapper'>
                             <p className='comment'># npm and yarn</p>
-                            <button className='codeSection copyable' onClick={()=>copyTextToClipboard('import Toast from \'awesome-toast\'')}>
-                                <p>import <span>Toast</span> from <span>&apos;awesome-toast&apos;</span></p>
+                            <button className='codeSection copyable' onClick={()=>copyTextToClipboard('import Toast from \'awesome-toast-component\'')}>
+                                <p>import <span>Toast</span> from <span>&apos;awesome-toast-component&apos;</span></p>
                             </button>
                         </div>
                         <p className='step'><a className='bold'>{'>'} step 3 : </a>start making toasts!</p>
