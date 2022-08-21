@@ -30,11 +30,12 @@
         display: flex;
         justify-content: space-between;
         > .headerLink{
+            font-size: 1.05rem;
             color: #222;
             padding: 3px 2px;
         }
         > #coffee:after{
-            content: " :)";
+            content: ")";
             opacity: 0;
             transition: opacity 200ms ease;
         }
@@ -65,6 +66,7 @@
                     position: fixed;
                     top: 20%;
                     > .navLink{
+                        font-size: 1.05rem;
                         color: #222;
                         padding: 1px;
                     }
@@ -90,6 +92,7 @@
                 flex-direction: column;
                 > #github{
                     padding: 5px;
+                    font-size: 1.05rem;
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -97,7 +100,7 @@
                     display: none;
                 }
                 > #awesome{
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                     > a{color: #222;}
                 }
                 > #name-versionWrapper{
@@ -106,21 +109,31 @@
                     align-items: flex-end;
                     gap: 30px;
                     > #toast{
-                        font-size: 4rem;
-                        line-height: 3.05rem;
+                        font-size: 4.6rem;
+                        line-height: 3.5rem;
                         > a{color: #222;}
                     }
+                    > #version{
+                        font-size: 1.05rem;
+                    }
+                }
+                > #description{
+                    font-size: 1.05rem;
                 }
                 > .sectionName{
                     margin-top: 35px;
-                    font-size: 1.3rem;
+                    font-size: 1.4rem;
                     line-height: 3rem;
                     > a{color: #222;}
+                }
+                > .sectionDescription{
+                    font-size: 1.05rem;
                 }
                 > #installation{
                     margin-top: 50px;
                 }
                 > .step{
+                    font-size: 1.05rem;
                     > .bold{
                         font-weight: bold;
                     }
@@ -131,7 +144,7 @@
                     padding: 15px 20px 15px 20px;
                     *{
                         font-family: JetBrainsMono-Regular;
-                        font-size: 0.85rem;
+                        font-size: 0.9rem;
                     }
                     background-color: #222;
                     border-radius: 7px;
@@ -192,6 +205,7 @@
         align-items: center;
         gap: 7px;
         > p{
+            font-size: 1.05rem;
             width: fit-content;
             text-align: center;
             > a{
