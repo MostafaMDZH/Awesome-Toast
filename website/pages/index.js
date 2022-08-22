@@ -182,7 +182,7 @@ export default function Main(){
 
                         {/* custom style */}
                         <h3 className='sectionName' id='custom-style'><a href='#custom-style'># Custom Style</a></h3>
-                        <p className='sectionDescription'>The Awesome Toast's html markup is equivalent to below:</p>
+                        <p className='sectionDescription'>The Awesome Toast&apos;s html markup is equivalent to below:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection'>
                                 <p>
