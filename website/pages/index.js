@@ -33,9 +33,9 @@ export default function Main(){
 		textArea.select();
 		try{
 			document.execCommand('copy');
-            Toast('Copied to clipboard');
+            Toast('Copied to clipboard 👍');
 		}catch(err){
-            Toast('cannot copy');
+            Toast('cannot copy 👎');
 		}
 		document.body.removeChild(textArea);
 	}
