@@ -9,7 +9,7 @@ declare class Toast {
     protected style: object | undefined;
     protected bornTime: number;
     protected waitForEvent: boolean;
-    protected eventHandler: EventListenerOrEventListenerObject;
+    protected hideEventHandler: EventListenerOrEventListenerObject;
     protected timeout: number;
     protected isWaitingForHide: boolean;
     protected afterHide: (() => void) | undefined;
@@ -29,10 +29,10 @@ declare class Toast {
     setPosition(position: string): void;
     setTheme(theme?: string): void;
     setStyle(style?: object): void;
+    protected show(): void;
     protected addHideEventListener(): void;
     protected removeHideEventListener(): void;
-    protected onHideEvent(): void;
-    protected show(): void;
+    protected handleHideEvent(): void;
     protected startHidingTimer(timeout: number): void;
     protected hide(): void;
 }

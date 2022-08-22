@@ -5,7 +5,7 @@ class Toast {
     constructor(parameters) {
         var _a, _b;
         this.bornTime = Date.now();
-        this.eventHandler = this.onHideEvent.bind(this);
+        this.hideEventHandler = this.handleHideEvent.bind(this);
         //append CSS styles to DOM:
         Toast.appendCSS(); //comment at dev mode
         //the view:
@@ -22,7 +22,7 @@ class Toast {
         this.timeout = (_b = parameters.timeout) !== null && _b !== void 0 ? _b : Toast.DEFAULT_HIDING_TIMEOUT;
         this.isWaitingForHide = false;
         this.afterHide = parameters.afterHide;
-        //events:
+        //hide events:
         this.addHideEventListener();
         //don't wait for an event:
         if (!this.waitForEvent)
@@ -96,28 +96,6 @@ class Toast {
                     element.style.setProperty(property[0], property[1]);
         }
     }
-    //addHideEventListener:
-    addHideEventListener() {
-        const thisView = this;
-        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
-            window.addEventListener(eventName, thisView.eventHandler);
-        });
-    }
-    //addHideEventListener:
-    removeHideEventListener() {
-        const thisView = this;
-        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
-            window.removeEventListener(eventName, thisView.eventHandler);
-        });
-    }
-    onHideEvent() {
-        let timeout = this.timeout;
-        let currentTime = Date.now();
-        if (currentTime - this.bornTime > this.timeout)
-            timeout = this.timeout / 3;
-        this.startHidingTimer(timeout);
-        this.removeHideEventListener();
-    }
     //show:
     show() {
         let thisView = this;
@@ -125,9 +103,32 @@ class Toast {
             thisView.view.classList.add('visible');
         }, 50); //slight delay between adding to DOM and running css animation
     }
+    //addHideEventListener:
+    addHideEventListener() {
+        const thisView = this;
+        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
+            window.addEventListener(eventName, thisView.hideEventHandler);
+        });
+    }
+    //addHideEventListener:
+    removeHideEventListener() {
+        const thisView = this;
+        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
+            window.removeEventListener(eventName, thisView.hideEventHandler);
+        });
+    }
+    //handleHideEvent:
+    handleHideEvent() {
+        let timeout = this.timeout;
+        let currentTime = Date.now();
+        if (currentTime - this.bornTime > this.timeout)
+            timeout = this.timeout / 2;
+        this.startHidingTimer(timeout);
+        this.removeHideEventListener();
+    }
     //startHidingTimer:
     startHidingTimer(timeout) {
-        if (this.timeout > 0 && !this.isWaitingForHide) {
+        if (timeout > 0 && !this.isWaitingForHide) {
             this.isWaitingForHide = true;
             setTimeout(() => {
                 this.hide();
