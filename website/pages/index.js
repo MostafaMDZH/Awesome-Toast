@@ -194,7 +194,7 @@ export default function Main(){
                         </div>
                         <p className='sectionDescription'>So you can apply your custom style in a form of an array of classes:</p>
                         <div className='codeWrapper'>
-                            <p className='comment'># you can even add your custom layout (like the &apos;bold&apos; class below)</p>
+                            <p className='comment'># you can even add your custom markup (like the &apos;bold&apos; class below)</p>
                             <button className='codeSection executable'
                                 onClick={() => {
                                     Toast(`Your account has been <a class='bold'>removed!</a>`,{
@@ -241,6 +241,8 @@ export default function Main(){
                                     {" });"}
                                 </p>
                             </button>
+                            <p className='comment'># Notice: when the waitForEvent is set to true, if an event happens after the timeout value after creating the Snackbar, the timeout value divides by two.</p>
+                            <p className='comment'># For example, if the timeout value is 4 seconds and an event happens 3 seconds after the Snackbar is created, 4 seconds later the hide animation starts, but if that event happens 5 seconds after the Snackbar is created, the hide animation starts in 2 seconds.</p>
                         </div>
 
                         <p className='sectionDescription'>Or you can set the timeout to zero so the auto-hide would be disabled (hiding would be available with the hide() function)</p>
@@ -265,7 +267,7 @@ export default function Main(){
 
                         {/* wait-for-event */}
                         <h3 className='sectionName' id='wait-for-event'><a href='#wait-for-event'># Wait For Event</a></h3>
-                        <p className='sectionDescription'>By default, a Toast doesn&apos;t wait for any user events to hide, but if you want to ensure that the user has seen your message, you can enable this feature with waitForEvent parameter, so until the user does not interact with the page, the Toast doesn&apos;t hide:</p>
+                        <p className='sectionDescription'>By default, a toast doesn&apos;t wait for any events to hide, but if you want to ensure that the user has seen your message, you can enable this feature with the waitForEvent parameter, so until the user does not interact with the page, the toast doesn&apos;t hide:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => {
@@ -343,7 +345,7 @@ export default function Main(){
 
                         {/* after hide */}
                         <h3 className='sectionName' id='after-hide'><a href='#after-hide'># After Hide</a></h3>
-                        <p className='sectionDescription'>When the waitForEvent is set to true, the hide function is waiting for a user event to start hiding timeout, so it may not occur exactly after the specified timeout after toast creation, so if you want to run a function after your toast hides, you can use the afterHide parameter for it:</p>
+                        <p className='sectionDescription'>When the waitForEvent is set to true, the hide function is waiting for an event to start hiding timeout, so it may not occur exactly after the specified timeout after toast creation, so if you want to run a function after your toast hides, you can use the afterHide parameter for it:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => {

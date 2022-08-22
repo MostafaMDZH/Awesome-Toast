@@ -7,16 +7,16 @@ class Toast{
     public static readonly DEFAULT_POSITION: string = 'bottom';
 
     //object properties:
-    protected viewID:       number;
-    protected view:         HTMLElement;
-    protected message:      string;
-    protected position:     string;
-    protected theme:        string | undefined;
-    protected style:        object | undefined;
-    protected bornTime:     number;
-    protected waitForEvent: boolean;
-    protected eventHandler: EventListenerOrEventListenerObject;
-    protected timeout:      number;
+    protected viewID:           number;
+    protected view:             HTMLElement;
+    protected message:          string;
+    protected position:         string;
+    protected theme:            string | undefined;
+    protected style:            object | undefined;
+    protected bornTime:         number;
+    protected waitForEvent:     boolean;
+    protected hideEventHandler: EventListenerOrEventListenerObject;
+    protected timeout:          number;
     protected isWaitingForHide: boolean;
     protected afterHide:    (() => void) | undefined;
 
@@ -32,7 +32,7 @@ class Toast{
         }){
 
         this.bornTime = Date.now();
-        this.eventHandler = this.onHideEvent.bind(this);
+        this.hideEventHandler = this.handleHideEvent.bind(this);
 
         //append CSS styles to DOM:
         Toast.appendCSS();//comment at dev mode
@@ -53,7 +53,7 @@ class Toast{
         this.isWaitingForHide = false;
         this.afterHide = parameters.afterHide;
         
-        //events:
+        //hide events:
         this.addHideEventListener();
 
         //don't wait for an event:
@@ -135,31 +135,6 @@ class Toast{
         }
     }
 
-    //addHideEventListener:
-    protected addHideEventListener():void{
-        const thisView = this;
-        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
-            window.addEventListener(eventName, thisView.eventHandler);
-        });
-    }
-
-    //addHideEventListener:
-    protected removeHideEventListener():void{
-        const thisView = this;
-        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
-            window.removeEventListener(eventName, thisView.eventHandler);
-        });
-    }
-
-    protected onHideEvent():void{
-        let timeout = this.timeout;
-        let currentTime = Date.now();
-        if(currentTime - this.bornTime > this.timeout)
-            timeout = this.timeout / 3;
-        this.startHidingTimer(timeout);
-        this.removeHideEventListener();
-    }
-
     //show:
     protected show():void{
         let thisView = this;
@@ -168,9 +143,35 @@ class Toast{
         }, 50);//slight delay between adding to DOM and running css animation
     }
 
+    //addHideEventListener:
+    protected addHideEventListener():void{
+        const thisView = this;
+        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
+            window.addEventListener(eventName, thisView.hideEventHandler);
+        });
+    }
+
+    //addHideEventListener:
+    protected removeHideEventListener():void{
+        const thisView = this;
+        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
+            window.removeEventListener(eventName, thisView.hideEventHandler);
+        });
+    }
+
+    //handleHideEvent:
+    protected handleHideEvent():void{
+        let timeout = this.timeout;
+        let currentTime = Date.now();
+        if(currentTime - this.bornTime > this.timeout)
+            timeout = this.timeout / 2;
+        this.startHidingTimer(timeout);
+        this.removeHideEventListener();
+    }
+
     //startHidingTimer:
 	protected startHidingTimer(timeout: number):void{
-		if(this.timeout > 0 && !this.isWaitingForHide){
+		if(timeout > 0 && !this.isWaitingForHide){
             this.isWaitingForHide = true;
 			setTimeout(() => {
 				this.hide();
