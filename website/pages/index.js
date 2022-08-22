@@ -102,14 +102,14 @@ export default function Main(){
                         {/* intro */}
                         <h3 id='awesome'><Link href='/'>Awesome</Link></h3>
                         <div id='name-versionWrapper'>
-                            <h1 id='toast'><Link href='/'>Toast</Link></h1>
+                            <h1 id='appName'><Link href='/'>Toast</Link></h1>
                             <a id='version'>V1.0.0</a>
                         </div>
-                        <p id='description'>React, Javascript, and Typescript compatible toast</p>
+                        <p className='sectionDescription'>React, Javascript, and Typescript compatible toast</p>
 
                         {/* installation */}
                         <h3 className='sectionName' id='installation'><a href='#installation'># Installation</a></h3>
-                        <p className='step'><a className='bold'>{'>'} step 1 : </a>you can use either npm or yarn, or import the main file with the script tag</p>
+                        <p className='step'><a className='bold'>{'>'} step 1 : </a>you can use either npm or yarn, or import the main file with the script tag.</p>
                         <div className='codeWrapper'>
                             <p className='comment'># npm</p>
                             <button className='codeSection copyable' onClick={()=>copyTextToClipboard('npm i awesome-toast-component')}>
@@ -128,7 +128,7 @@ export default function Main(){
                                 <p>{"<script src=\""}<span>toast.js</span>{"\"></script>"}</p>
                             </button>
                         </div>
-                        <p className='step'><a className='bold'>{'>'} step 2 : </a>include the package in your code</p>
+                        <p className='step'><a className='bold'>{'>'} step 2 : </a>include the package in your code:</p>
                         <div className='codeWrapper'>
                             <p className='comment'># npm and yarn</p>
                             <button className='codeSection copyable' onClick={()=>copyTextToClipboard('import Toast from \'awesome-toast-component\'')}>
@@ -144,7 +144,7 @@ export default function Main(){
 
                         {/* position */}
                         <h3 className='sectionName' id='position'><a href='#position'># Position</a></h3>
-                        <p className='sectionDescription'>You can position the toast by setting the position parameter</p>
+                        <p className='sectionDescription'>You can position the toast by setting the position parameter:</p>
                         <div className='codeWrapper'>
                             <p className='comment'># bottom(default)</p>
                             <button className='codeSection executable'
@@ -168,9 +168,8 @@ export default function Main(){
 
                         {/* theme */}
                         <h3 className='sectionName' id='theme'><a href='#theme'># Theme</a></h3>
-                        <p className='sectionDescription'>The default theme is dark but you can enable the light theme with the theme parameter</p>
+                        <p className='sectionDescription'>The default theme is dark, but you can enable the light theme with the theme parameter:</p>
                         <div className='codeWrapper'>
-                            <p className='comment'># the default theme is dark</p>
                             <button className='codeSection executable'
                                 onClick={() => Toast(`Today is sunday!`, { theme: 'light'})}>
                                 <p>
@@ -183,7 +182,7 @@ export default function Main(){
 
                         {/* custom style */}
                         <h3 className='sectionName' id='custom-style'><a href='#custom-style'># Custom Style</a></h3>
-                        <p className='sectionDescription'>The Awesome Toast html markup is equivalent to below</p>
+                        <p className='sectionDescription'>The Awesome Toast's html markup is equivalent to below:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection'>
                                 <p>
@@ -193,7 +192,7 @@ export default function Main(){
                                 </p>
                             </button>
                         </div>
-                        <p className='sectionDescription'>So you can apply your custom style in a form of an array of classes</p>
+                        <p className='sectionDescription'>So you can apply your custom style in a form of an array of classes:</p>
                         <div className='codeWrapper'>
                             <p className='comment'># you can even add your custom layout (like the &apos;bold&apos; class below)</p>
                             <button className='codeSection executable'
@@ -232,7 +231,7 @@ export default function Main(){
 
                         {/* timing */}
                         <h3 className='sectionName' id='timing'><a href='#timing'># Timing</a></h3>
-                        <p className='sectionDescription'>The default timeout for hiding is 4 seconds but you can customize it with the timeout parameter.</p>
+                        <p className='sectionDescription'>The default timeout for hiding is 4 seconds but you can customize it with the timeout parameter:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => Toast(`Give me a second please...`, { timeout: 1000 })}>
@@ -266,7 +265,7 @@ export default function Main(){
 
                         {/* wait-for-event */}
                         <h3 className='sectionName' id='wait-for-event'><a href='#wait-for-event'># Wait For Event</a></h3>
-                        <p className='sectionDescription'>By default, a Toast doesn&apos;t wait for any user events to hide, but if you want to ensure that the user has seen your message, you can enable this feature with waitForEvent parameter, so until the user does not interact with the page, the Toast doesn&apos;t hide.</p>
+                        <p className='sectionDescription'>By default, a Toast doesn&apos;t wait for any user events to hide, but if you want to ensure that the user has seen your message, you can enable this feature with waitForEvent parameter, so until the user does not interact with the page, the Toast doesn&apos;t hide:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => {
@@ -284,7 +283,7 @@ export default function Main(){
 
                         {/* update on fly */}
                         <h3 className='sectionName' id='update-on-fly'><a href='#update-on-fly'># Update On Fly</a></h3>
-                        <p className='sectionDescription'>If you store the returned object from the Toast() function, you can set some of its attributes after show</p>
+                        <p className='sectionDescription'>If you store the returned object from the Toast() function, you can set some of its attributes after its created:</p>
                         <div className='codeWrapper'>
                             
                             <p className='comment'># create a simple toast</p>
@@ -344,7 +343,7 @@ export default function Main(){
 
                         {/* after hide */}
                         <h3 className='sectionName' id='after-hide'><a href='#after-hide'># After Hide</a></h3>
-                        <p className='sectionDescription'>When the waitForEvent is set to true, the hide function is waiting for a user event to start hiding timeout, so it may not occur exactly after the specified timeout after toast creation, so if you want to run a function after your toast hides, you can use the afterHide parameter for it</p>
+                        <p className='sectionDescription'>When the waitForEvent is set to true, the hide function is waiting for a user event to start hiding timeout, so it may not occur exactly after the specified timeout after toast creation, so if you want to run a function after your toast hides, you can use the afterHide parameter for it:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => {

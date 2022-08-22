@@ -108,17 +108,14 @@
                     display: flex;
                     align-items: flex-end;
                     gap: 30px;
-                    > #toast{
-                        font-size: 4.6rem;
+                    > #appName{
+                        font-size: 4.3rem;
                         line-height: 3.5rem;
                         > a{color: #222;}
                     }
                     > #version{
                         font-size: 1.05rem;
                     }
-                }
-                > #description{
-                    font-size: 1.05rem;
                 }
                 > .sectionName{
                     margin-top: 35px;
