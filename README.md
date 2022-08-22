@@ -14,3 +14,4 @@ React, Javascript, and Typescript compatible toast<br>
 - Callback after hiding
 - Responsive design
 - Dynamic HTML
+- Lightweight

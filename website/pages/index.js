@@ -72,7 +72,7 @@ export default function Main(){
 
             {/* header */}
             <header id='header'>
-                <Link href='/'><a className='headerLink'>Awesome Components</a></Link>
+                <Link href='https://awesome-components.demos.mostafa-mdzh.ir/'><a className='headerLink'>Awesome Components</a></Link>
                 <Link href='https://www.buymeacoffee.com/mostafamdzh'><a className='headerLink' id='coffee'>buy me a coffee! :)</a></Link>
             </header>
 
@@ -372,7 +372,7 @@ export default function Main(){
                 <p>Made by <a href='https://github.com/MostafaMDZH'>Mostafa Mohammadzadeh</a></p>
                 <p id='dash'>-</p>
                 <p id='githubLink'>Source on <a href='https://github.com/MostafaMDZH/Awesome-Toast'>Github</a></p>
-                <p id='awesomeComponents'>From <Link href='/'><a>Awesome Components</a></Link></p>
+                <p id='awesomeComponents'>From <Link href='https://awesome-components.demos.mostafa-mdzh.ir/'><a>Awesome Components</a></Link></p>
             </footer>
 
         </div>
