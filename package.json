@@ -1,7 +1,7 @@
 {
   "name": "awesome-toast-component",
   "description": "React, Javascript, and Typescript compatible toast.",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "Mostafa Mohammadzadeh",
   "license": "MIT",
   "main": "src/toast.js",
@@ -21,6 +21,7 @@
   "keywords": [
     "toast",
     "react",
+    "reactjs",
     "next",
     "nextjs",
     "javascript",
