@@ -1,6 +1,4 @@
-module.exports = (message: string, parameters: object) => {return new Toast({message, ...parameters});}
-
-class Toast{
+export default class Toast{
     
     //default values:
     public static readonly DEFAULT_HIDING_TIMEOUT: number = 4000;
@@ -21,8 +19,7 @@ class Toast{
     protected afterHide:    (() => void) | undefined;
 
     //constructor:
-    constructor(parameters: {
-            message:       string,
+    constructor(message:string, option?: {
             position?:     string,
             theme?:        string,
             style?:        object,
@@ -39,19 +36,19 @@ class Toast{
 
         //the view:
         this.viewID = Toast.generateViewID();
-        let view = Toast.getDOM(this.viewID);
+        let view = Toast.getHtml(this.viewID);
         document.body.appendChild(view);
         this.view = document.getElementById(this.viewID.toString()) || document.createElement('div');
         
         //set properties:
-        this.setMessage(this.message = parameters.message);
-        this.setPosition(this.position = parameters.position || Toast.DEFAULT_POSITION);
-        this.setTheme(parameters.theme);
-        this.setStyle(parameters.style);
-        this.waitForEvent = parameters.waitForEvent ?? false;
-        this.timeout = parameters.timeout ?? Toast.DEFAULT_HIDING_TIMEOUT;
+        this.setMessage(this.message = message);
+        this.setPosition(this.position = option?.position || Toast.DEFAULT_POSITION);
+        this.setTheme(option?.theme);
+        this.setStyle(option?.style);
+        this.waitForEvent = option?.waitForEvent ?? false;
+        this.timeout = option?.timeout ?? Toast.DEFAULT_HIDING_TIMEOUT;
         this.isWaitingForHide = false;
-        this.afterHide = parameters.afterHide;
+        this.afterHide = option?.afterHide;
         
         //hide events:
         this.addHideEventListener();
@@ -85,8 +82,8 @@ class Toast{
         return Toast.generateViewID();
 	}
 
-    //getDOM:
-    protected static getDOM(viewId: number):ChildNode{
+    //getHtml:
+    protected static getHtml(viewId: number):ChildNode{
         const DOM = `
             <div class="toast" id="${viewId}">
                 <div class="container">

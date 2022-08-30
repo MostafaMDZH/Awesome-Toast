@@ -1,8 +1,8 @@
 "use strict";
-module.exports = (message, parameters) => { return new Toast(Object.assign({ message }, parameters)); };
+Object.defineProperty(exports, "__esModule", { value: true });
 class Toast {
     //constructor:
-    constructor(parameters) {
+    constructor(message, option) {
         var _a, _b;
         this.bornTime = Date.now();
         this.hideEventHandler = this.handleHideEvent.bind(this);
@@ -10,18 +10,18 @@ class Toast {
         Toast.appendCSS(); //comment at dev mode
         //the view:
         this.viewID = Toast.generateViewID();
-        let view = Toast.getDOM(this.viewID);
+        let view = Toast.getHtml(this.viewID);
         document.body.appendChild(view);
         this.view = document.getElementById(this.viewID.toString()) || document.createElement('div');
         //set properties:
-        this.setMessage(this.message = parameters.message);
-        this.setPosition(this.position = parameters.position || Toast.DEFAULT_POSITION);
-        this.setTheme(parameters.theme);
-        this.setStyle(parameters.style);
-        this.waitForEvent = (_a = parameters.waitForEvent) !== null && _a !== void 0 ? _a : false;
-        this.timeout = (_b = parameters.timeout) !== null && _b !== void 0 ? _b : Toast.DEFAULT_HIDING_TIMEOUT;
+        this.setMessage(this.message = message);
+        this.setPosition(this.position = (option === null || option === void 0 ? void 0 : option.position) || Toast.DEFAULT_POSITION);
+        this.setTheme(option === null || option === void 0 ? void 0 : option.theme);
+        this.setStyle(option === null || option === void 0 ? void 0 : option.style);
+        this.waitForEvent = (_a = option === null || option === void 0 ? void 0 : option.waitForEvent) !== null && _a !== void 0 ? _a : false;
+        this.timeout = (_b = option === null || option === void 0 ? void 0 : option.timeout) !== null && _b !== void 0 ? _b : Toast.DEFAULT_HIDING_TIMEOUT;
         this.isWaitingForHide = false;
-        this.afterHide = parameters.afterHide;
+        this.afterHide = option === null || option === void 0 ? void 0 : option.afterHide;
         //hide events:
         this.addHideEventListener();
         //don't wait for an event:
@@ -48,8 +48,8 @@ class Toast {
             return id;
         return Toast.generateViewID();
     }
-    //getDOM:
-    static getDOM(viewId) {
+    //getHtml:
+    static getHtml(viewId) {
         const DOM = `
             <div class="toast" id="${viewId}">
                 <div class="container">
@@ -146,6 +146,7 @@ class Toast {
         }, 800); //long enough to make sure that it is hidden
     }
 }
+exports.default = Toast;
 //default values:
 Toast.DEFAULT_HIDING_TIMEOUT = 4000;
 Toast.DEFAULT_POSITION = 'bottom';
