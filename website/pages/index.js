@@ -14,9 +14,9 @@ export default function Main(){
 			fallbackCopyTextToClipboard(text);
 		}else{
 			navigator.clipboard.writeText(text).then(function(){
-                Toast('Copied to clipboard 👍');
+                new Toast('Copied to clipboard 👍');
 			},function(err){
-                Toast('cannot copy 👎');
+                new Toast('cannot copy 👎');
 			});
 		}
 	}
@@ -33,9 +33,9 @@ export default function Main(){
 		textArea.select();
 		try{
 			document.execCommand('copy');
-            Toast('Copied to clipboard 👍');
+            new Toast('Copied to clipboard 👍');
 		}catch(err){
-            Toast('cannot copy 👎');
+            new Toast('cannot copy 👎');
 		}
 		document.body.removeChild(textArea);
 	}
@@ -46,12 +46,12 @@ export default function Main(){
         if(isWelcomeTstShow) return;
         if(cookies.get('WelcomeTst') !== undefined) return;
         isWelcomeTstShow = true;
-        Toast('Welcome to Awesome Toast! 👋', {
+        new Toast('Welcome to Awesome Toast! 👋', {
             position: 'top',
             timeout: 3000,
             theme: 'light',
             afterHide: () => {
-                Toast('Click on code sections to run the demo', {
+                new Toast('Click on code sections to run the demo', {
                     position: 'top',
                     theme: 'light',
                     waitForEvent: true,
@@ -137,8 +137,8 @@ export default function Main(){
                         </div>
                         <p className='step'><a className='bold'>{'>'} step 3 : </a>start making toasts!</p>
                         <div className='codeWrapper'>
-                            <button className='codeSection executable' onClick={()=>Toast('Hello World! 👋')}>
-                                <p><span>Toast</span>(&apos;Hello world! 👋&apos;);</p>
+                            <button className='codeSection executable' onClick={()=>new Toast('Hello World! 👋')}>
+                                <p><span>new Toast</span>(&apos;Hello world! 👋&apos;);</p>
                             </button>
                         </div>
 
@@ -148,18 +148,18 @@ export default function Main(){
                         <div className='codeWrapper'>
                             <p className='comment'># bottom(default)</p>
                             <button className='codeSection executable'
-                                onClick={() => Toast(`I'm at the bottom`, { position: 'bottom' })}>
+                                onClick={() => new Toast(`I'm at the bottom`, { position: 'bottom' })}>
                                 <p>
-                                    {"Toast(`I'm at the bottom`), {"}<br></br>
+                                    {"new Toast(`I'm at the bottom`), {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"position: 'bottom'"}</span><br></br>
                                     {" });"}
                                 </p>
                             </button>
                             <p className='comment'># top</p>
                             <button className='codeSection executable'
-                                onClick={() => Toast(`I'm at the top`, { position: 'top' })}>
+                                onClick={() => new Toast(`I'm at the top`, { position: 'top' })}>
                                 <p>
-                                    {"Toast(`I'm at the top`), {"}<br></br>
+                                    {"new Toast(`I'm at the top`), {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"position: 'top'"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -171,9 +171,9 @@ export default function Main(){
                         <p className='sectionDescription'>The default theme is dark, but you can enable the light theme with the theme parameter:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
-                                onClick={() => Toast(`Today is sunday!`, { theme: 'light'})}>
+                                onClick={() => new Toast(`Today is sunday!`, { theme: 'light'})}>
                                 <p>
-                                    {"Toast(`Today is sunday!`), {"}<br></br>
+                                    {"new Toast(`Today is sunday!`), {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"theme: 'light'"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -197,7 +197,7 @@ export default function Main(){
                             <p className='comment'># you can even add your custom markup (like the &apos;bold&apos; class below)</p>
                             <button className='codeSection executable'
                                 onClick={() => {
-                                    Toast(`Your account has been <a class='bold'>removed!</a>`,{
+                                    new Toast(`Your account has been <a class='bold'>removed!</a>`,{
                                         style: {
                                             container: [
                                                 ['background-color', 'red']
@@ -212,7 +212,7 @@ export default function Main(){
                                     });
                                 }}>
                                 <p>
-                                    {"Toast(`Your account has been "}<span>{"<a class='bold'>"}</span>{"removed!"}<span>{"</a>"}</span>{"`, { "}<br></br>
+                                    {"new Toast(`Your account has been "}<span>{"<a class='bold'>"}</span>{"removed!"}<span>{"</a>"}</span>{"`, { "}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"style: {"}</span><br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{"container: ["}</span><br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{"['background-color', 'red']"}</span><br></br>
@@ -234,9 +234,9 @@ export default function Main(){
                         <p className='sectionDescription'>The default timeout for hiding is 4 seconds but you can customize it with the timeout parameter:</p>
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
-                                onClick={() => Toast(`Give me a second please...`, { timeout: 1000 })}>
+                                onClick={() => new Toast(`Give me a second please...`, { timeout: 1000 })}>
                                 <p>
-                                    {"Toast(`Give me a second please...`), {"}<br></br>
+                                    {"new Toast(`Give me a second please...`), {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"timeout: 1000"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -250,10 +250,10 @@ export default function Main(){
                             <button className='codeSection executable'
                                 onClick={() => {
                                     if(Tst === null)
-                                        Tst = Toast(`I'm not going anywhere!`, { timeout: 0 });
+                                        Tst = new Toast(`I'm not going anywhere!`, { timeout: 0 });
                                 }}>
                                 <p>
-                                    {"let tst = Toast(`I'm not going anywhere!`), {"}<br></br>
+                                    {"let tst = new Toast(`I'm not going anywhere!`), {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"timeout: 0"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -272,11 +272,11 @@ export default function Main(){
                             <button className='codeSection executable'
                                 onClick={() => {
                                     setTimeout(() => {
-                                        Toast(`I'm not going to hide until an event happens`, { waitForEvent: true });
+                                        new Toast(`I'm not going to hide until an event happens`, { waitForEvent: true });
                                     }, 100);
                                 }}>
                                 <p>
-                                    {"Toast(`I'm not going to hide until an event happens`), {"}<br></br>
+                                    {"new Toast(`I'm not going to hide until an event happens`), {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"waitForEvent: true"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -285,13 +285,13 @@ export default function Main(){
 
                         {/* update on fly */}
                         <h3 className='sectionName' id='update-on-fly'><a href='#update-on-fly'># Update On Fly</a></h3>
-                        <p className='sectionDescription'>If you store the returned object from the Toast() function, you can set some of its attributes after its created:</p>
+                        <p className='sectionDescription'>If you store the returned object from the new Toast() function, you can set some of its attributes after its created:</p>
                         <div className='codeWrapper'>
                             
                             <p className='comment'># create a simple toast</p>
                             <button className='codeSection executable'
-                                onClick={() => {if(Tst === null) Tst = Toast(`I'm a simple toast`, { timeout: 0 });}}>
-                                <p>{"let "}<span>tst</span>{" = Toast(`I'm a simple toast`), { timeout: 0 });"}</p>
+                                onClick={() => {if(Tst === null) Tst = new Toast(`I'm a simple toast`, { timeout: 0 });}}>
+                                <p>{"let "}<span>tst</span>{" = new Toast(`I'm a simple toast`), { timeout: 0 });"}</p>
                             </button>
 
                             <p className='comment'># update the text</p>
@@ -349,13 +349,13 @@ export default function Main(){
                         <div className='codeWrapper'>
                             <button className='codeSection executable'
                                 onClick={() => {
-                                    Toast('Marco...', {
-                                        afterHide: () => Toast('Polo!')
+                                    new Toast('Marco...', {
+                                        afterHide: () => new Toast('Polo!')
                                     });
                                 }}>
                                 <p>
-                                    {"Toast('Marco...'), {"}<br></br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span>{"afterHide"}</span>{": () => Toast('Polo!')"}<br></br>
+                                    {"new Toast('Marco...'), {"}<br></br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span>{"afterHide"}</span>{": () => new Toast('Polo!')"}<br></br>
                                     {"});"}
                                 </p>
                             </button>
