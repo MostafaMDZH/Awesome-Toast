@@ -76,14 +76,14 @@ export default function Main(){
                 <Link href='https://www.buymeacoffee.com/mostafamdzh'><a className='headerLink' id='coffee'>buy me a coffee! :)</a></Link>
             </header>
 
-            <div id='container'>
+            <div className='container' id='intro'>
 
                 <div id='main'>
 
                     {/* navigation */}
                     <div id='navigation'>
                         <div id='navigationWrapper'>
-                            <a className='navLink' href='#container'     >intro         </a>
+                            <a className='navLink' href='#intro'         >intro         </a>
                             <a className='navLink' href='#installation'  >installation  </a>
                             <a className='navLink' href='#position'      >position      </a>
                             <a className='navLink' href='#theme'         >theme         </a>
