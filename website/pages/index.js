@@ -107,6 +107,22 @@ export default function Main(){
                         </div>
                         <p className='sectionDescription'>React, Javascript, and Typescript compatible toast</p>
 
+                        <h3 className='sectionName' id='features'><a># Features</a></h3>
+                        <ul className='features'>
+                            <li>Custom Position</li>
+                            <li>Dark/Light Theme</li>
+                            <li>Custom Style</li>
+                            <li>Custom Markup</li>
+                            <li>Update On Fly</li>
+                            <li>User Event Detection</li>
+                            <li>Custom Timeout</li>
+                            <li>Manual Hiding</li>
+                            <li>Callback After Hide</li>
+                            <li>Responsive Design</li>
+                            <li>Dynamic HTML</li>
+                            <li>Lightweight</li>
+                        </ul>
+
                         {/* installation */}
                         <h3 className='sectionName' id='installation'><a href='#installation'># Installation</a></h3>
                         <p className='step'><a className='bold'>{'>'} step 1 : </a>you can use either npm or yarn, or import the main file with the script tag.</p>
