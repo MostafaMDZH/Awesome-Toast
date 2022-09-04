@@ -83,6 +83,7 @@ export default function Main(){
                     {/* navigation */}
                     <div id='navigation'>
                         <div id='navigationWrapper'>
+                            <a className='navLink' href='#container'     >intro         </a>
                             <a className='navLink' href='#installation'  >installation  </a>
                             <a className='navLink' href='#position'      >position      </a>
                             <a className='navLink' href='#theme'         >theme         </a>
