@@ -202,8 +202,8 @@ export default function Main(){
                         <div className='codeWrapper'>
                             <button className='codeSection'>
                                 <p>
-                                    {"<div class='"}<span>{"container'"}</span>{">"}<br></br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;{"<p class='"}<span>{"message'"}</span>{"></p>"}<br></br>
+                                    {"<div class='"}<span>{"container"}</span>{"'>"}<br></br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{"<p class='"}<span>{"message"}</span>{"'></p>"}<br></br>
                                     {"</div>"}
                                 </p>
                             </button>
@@ -312,8 +312,8 @@ export default function Main(){
 
                             <p className='comment'># update the text</p>
                             <button className='codeSection executable'
-                                onClick={() => Tst?.setMessage('I can change my massage')}>
-                                <p>{"tst."}<span>{"setMessage"}</span>{"('I can change my massage');"}</p><br></br>
+                                onClick={() => Tst?.setMessage('I can change my message')}>
+                                <p>{"tst."}<span>{"setMessage"}</span>{"('I can change my message');"}</p><br></br>
                             </button>
 
                             <p className='comment'># change the position</p>
