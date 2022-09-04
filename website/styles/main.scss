@@ -44,7 +44,7 @@
             opacity: 1;
         }
     }
-    > #container{
+    > .container{
         width: 100%;
         max-width: 900px;
         padding: 70px 20px 50px 20px;
@@ -84,7 +84,7 @@
             }
 
             //content:
-            > .content{
+            > #content{
                 position: relative;
                 flex: 1;
                 max-width: 635px;
