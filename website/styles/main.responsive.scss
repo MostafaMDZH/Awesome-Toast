@@ -7,7 +7,7 @@
             top: 0;
             z-index: 1;
         }
-        > #container{
+        > .container{
             max-width: 880px;
             margin-left: -40px;
             padding-top: 80px;
@@ -21,7 +21,7 @@
             padding-left: 40px;
             padding-right: 40px;
         }
-        > #container{
+        > .container{
             max-width: 860px;
             margin-left: 0;
         }
@@ -33,7 +33,7 @@
         > #header{
             display: none;
         }
-        > #container{
+        > .container{
             padding-top: 35px;
             padding-bottom: 30px;
             > #main{
@@ -65,7 +65,7 @@
 
 @media screen and (max-width: 700px){
     #window{
-        > #container{
+        > .container{
             padding-top: 25px;
             padding-right: 20px;
         }
@@ -77,7 +77,7 @@
         width: 4px;
     }
     #window{
-        > #container{
+        > .container{
             padding-top: 15px;
             padding-left: 15px;
             padding-right: 10px;
@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 400px){
     #window{
-        > #container{
+        > .container{
             > #main{
                 > #content{
                     > #name-versionWrapper{

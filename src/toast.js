@@ -106,14 +106,14 @@ class Toast {
     //addHideEventListener:
     addHideEventListener() {
         const thisView = this;
-        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
+        'mousemove mousedown mouseup touchmove click keydown keyup scroll'.split(' ').forEach((eventName) => {
             window.addEventListener(eventName, thisView.hideEventHandler);
         });
     }
     //addHideEventListener:
     removeHideEventListener() {
         const thisView = this;
-        'mousemove mousedown mouseup touchmove click keydown keyup'.split(' ').forEach((eventName) => {
+        'mousemove mousedown mouseup touchmove click keydown keyup scroll'.split(' ').forEach((eventName) => {
             window.removeEventListener(eventName, thisView.hideEventHandler);
         });
     }
@@ -157,6 +157,7 @@ const Style = `
     transform: translate(-50%, 0);
     opacity: 0;
     transition: top 400ms ease-in-out 0s, bottom 400ms ease-in-out 0s, opacity 500ms ease-in-out 0ms;
+    z-index: 999999995;
   }
   .toast > .container {
     box-sizing: border-box;
