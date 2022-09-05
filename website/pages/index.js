@@ -106,7 +106,7 @@ export default function Main(){
                             <h1 id='appName'><Link href='/'>Toast</Link></h1>
                             <a id='version'>V2.0.0</a>
                         </div>
-                        <p className='sectionDescription'>React, Javascript, and Typescript compatible toast</p>
+                        <p className='sectionDescription'>React, Angular, Vue, and Typescript compatible toast</p>
 
                         <h3 className='sectionName' id='features'><a># Features</a></h3>
                         <ul className='features'>
@@ -122,6 +122,7 @@ export default function Main(){
                             <li>Responsive Design</li>
                             <li>Dynamic HTML</li>
                             <li>Lightweight</li>
+                            <li>Zero Dependencies</li>
                         </ul>
 
                         {/* installation */}
