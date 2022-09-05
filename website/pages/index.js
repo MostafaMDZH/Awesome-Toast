@@ -122,7 +122,7 @@ export default function Main(){
                             <li>Responsive Design</li>
                             <li>Dynamic HTML</li>
                             <li>Lightweight</li>
-                            <li>Zero Dependencies</li>
+                            <li>Zero Dependency</li>
                         </ul>
 
                         {/* installation */}

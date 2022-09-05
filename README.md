@@ -15,4 +15,4 @@ React, Javascript, and Typescript compatible toast<br>
 - Responsive Design
 - Dynamic Html
 - Lightweight
-- Zero Dependencies
+- Zero Dependency
