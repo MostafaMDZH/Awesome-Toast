@@ -1,5 +1,5 @@
 # Awesome Toast
-React, Javascript, and Typescript compatible toast<br>
+React, Angular, Vue, and Typescript compatible toast.<br>
 @MostafaMDZH | mostafa.mdzh@gmail.com</br></br>
 
 ## Features <a href='https://awesome-toast.demos.mostafa-mdzh.ir'>[Docs & Demo]</a>
