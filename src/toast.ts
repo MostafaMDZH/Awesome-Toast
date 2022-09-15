@@ -63,7 +63,7 @@ export default class Toast{
 	}
 
     //appendCSS:
-    protected static appendCSS():void{
+    protected static appendCSS(){
         if(document.getElementById('toast-style') === null){
             let head = document.head || document.getElementsByTagName('head')[0];
             let style = document.createElement('style');
@@ -97,14 +97,14 @@ export default class Toast{
 	}
 
     //setMessage:
-    public setMessage(message:string):void{
+    public setMessage(message:string){
         this.message = message;
         let messageEl = <HTMLElement> this.view.getElementsByClassName('message')[0];
         messageEl.innerHTML = this.message;
     }
 
     //setPosition:
-    public setPosition(position:string):void{
+    public setPosition(position:string){
         this.position = position;
         this.view.classList.remove('bottom');
         this.view.classList.remove('top');
@@ -112,7 +112,7 @@ export default class Toast{
     }
 
     //setTheme:
-    public setTheme(theme?:string):void{
+    public setTheme(theme?:string){
         if(theme === undefined) return;
         this.theme == theme;
         this.view.classList.remove('light');
@@ -121,7 +121,7 @@ export default class Toast{
     }
 
     //setStyle:
-    public setStyle(style?:object):void{
+    public setStyle(style?:object){
         if(style === undefined) return;
         this.style = style;
         for(const [className, style] of Object.entries(this.style)){
@@ -133,7 +133,7 @@ export default class Toast{
     }
 
     //show:
-    protected show():void{
+    protected show(){
         let thisView = this;
         setTimeout(() => {
             thisView.view.classList.add('visible');
@@ -141,7 +141,7 @@ export default class Toast{
     }
 
     //addHideEventListener:
-    protected addHideEventListener():void{
+    protected addHideEventListener(){
         const thisView = this;
         'mousemove mousedown mouseup touchmove click keydown keyup scroll'.split(' ').forEach((eventName) => {
             window.addEventListener(eventName, thisView.hideEventHandler);
@@ -149,7 +149,7 @@ export default class Toast{
     }
 
     //addHideEventListener:
-    protected removeHideEventListener():void{
+    protected removeHideEventListener(){
         const thisView = this;
         'mousemove mousedown mouseup touchmove click keydown keyup scroll'.split(' ').forEach((eventName) => {
             window.removeEventListener(eventName, thisView.hideEventHandler);
@@ -157,7 +157,7 @@ export default class Toast{
     }
 
     //handleHideEvent:
-    protected handleHideEvent():void{
+    protected handleHideEvent(){
         let timeout = this.timeout;
         let currentTime = Date.now();
         if(currentTime - this.bornTime > this.timeout)
@@ -167,7 +167,7 @@ export default class Toast{
     }
 
     //startHidingTimer:
-	protected startHidingTimer(timeout: number):void{
+	protected startHidingTimer(timeout: number){
 		if(timeout > 0 && !this.isWaitingForHide){
             this.isWaitingForHide = true;
 			setTimeout(() => {
@@ -177,7 +177,7 @@ export default class Toast{
 	}
 
     //hide:
-    protected hide():void{
+    public hide(){
         this.view.classList.remove('visible');
         const thisView = this;
         setTimeout(() => {

@@ -33,5 +33,5 @@ export default class Toast {
     protected removeHideEventListener(): void;
     protected handleHideEvent(): void;
     protected startHidingTimer(timeout: number): void;
-    protected hide(): void;
+    hide(): void;
 }
