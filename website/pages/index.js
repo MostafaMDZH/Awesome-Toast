@@ -168,7 +168,7 @@ export default function Main(){
                             <button className='codeSection executable'
                                 onClick={() => new Toast(`I'm at the bottom`, { position: 'bottom' })}>
                                 <p>
-                                    {"new Toast(`I'm at the bottom`), {"}<br></br>
+                                    {"new Toast(`I'm at the bottom`, {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"position: 'bottom'"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -177,7 +177,7 @@ export default function Main(){
                             <button className='codeSection executable'
                                 onClick={() => new Toast(`I'm at the top`, { position: 'top' })}>
                                 <p>
-                                    {"new Toast(`I'm at the top`), {"}<br></br>
+                                    {"new Toast(`I'm at the top`, {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"position: 'top'"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -191,7 +191,7 @@ export default function Main(){
                             <button className='codeSection executable'
                                 onClick={() => new Toast(`Today is sunday!`, { theme: 'light'})}>
                                 <p>
-                                    {"new Toast(`Today is sunday!`), {"}<br></br>
+                                    {"new Toast(`Today is sunday!`, {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"theme: 'light'"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -254,7 +254,7 @@ export default function Main(){
                             <button className='codeSection executable'
                                 onClick={() => new Toast(`Give me a second please...`, { timeout: 1000 })}>
                                 <p>
-                                    {"new Toast(`Give me a second please...`), {"}<br></br>
+                                    {"new Toast(`Give me a second please...`, {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"timeout: 1000"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -271,7 +271,7 @@ export default function Main(){
                                         Tst = new Toast(`I'm not going anywhere!`, { timeout: 0 });
                                 }}>
                                 <p>
-                                    {"let tst = new Toast(`I'm not going anywhere!`), {"}<br></br>
+                                    {"let tst = new Toast(`I'm not going anywhere!`, {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"timeout: 0"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -294,7 +294,7 @@ export default function Main(){
                                     }, 100);
                                 }}>
                                 <p>
-                                    {"new Toast(`I'm not going to hide until an event happens`), {"}<br></br>
+                                    {"new Toast(`I'm not going to hide until an event happens`, {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"waitForEvent: true"}</span><br></br>
                                     {" });"}
                                 </p>
@@ -309,7 +309,7 @@ export default function Main(){
                             <p className='comment'># create a simple toast</p>
                             <button className='codeSection executable'
                                 onClick={() => {if(Tst === null) Tst = new Toast(`I'm a simple toast`, { timeout: 0 });}}>
-                                <p>{"let "}<span>tst</span>{" = new Toast(`I'm a simple toast`), { timeout: 0 });"}</p>
+                                <p>{"let "}<span>tst</span>{" = new Toast(`I'm a simple toast`, { timeout: 0 });"}</p>
                             </button>
 
                             <p className='comment'># update the text</p>
@@ -372,7 +372,7 @@ export default function Main(){
                                     });
                                 }}>
                                 <p>
-                                    {"new Toast('Marco...'), {"}<br></br>
+                                    {"new Toast('Marco...', {"}<br></br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span>{"afterHide"}</span>{": () => new Toast('Polo!')"}<br></br>
                                     {"});"}
                                 </p>
