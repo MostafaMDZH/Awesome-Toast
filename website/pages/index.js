@@ -10,41 +10,19 @@ export default function Main(){
 
     //copyTextToClipboard:
 	const copyTextToClipboard = (text) => {
-		if(!navigator.clipboard){
-			fallbackCopyTextToClipboard(text);
-		}else{
-			navigator.clipboard.writeText(text).then(function(){
-                new Toast('Copied to clipboard 👍');
-			},function(err){
-                new Toast('cannot copy 👎');
-			});
-		}
-	}
-
-	//fallbackCopyTextToClipboard:
-	const fallbackCopyTextToClipboard = (text) => {
-		let textArea = document.createElement("textarea");
-		textArea.value			= text;
-		textArea.style.top		= "0";//avoid scrolling to bottom:
-		textArea.style.left		= "0";
-		textArea.style.position	= "fixed";
-		document.body.appendChild(textArea);
-		textArea.focus();
-		textArea.select();
-		try{
-			document.execCommand('copy');
+		if(!navigator.clipboard) return;
+        navigator.clipboard.writeText(text).then(function(){
             new Toast('Copied to clipboard 👍');
-		}catch(err){
+        },function(err){
             new Toast('cannot copy 👎');
-		}
-		document.body.removeChild(textArea);
+        });
 	}
 
     //welcome toast:
     const cookies = new Cookies();
     setTimeout(() => {
         if(isWelcomeTstShow) return;
-        if(cookies.get('WelcomeTst') !== undefined) return;
+        if(cookies.get('Ts_WelcomeTst') !== undefined) return;
         isWelcomeTstShow = true;
         new Toast('Welcome to Awesome Toast! 👋', {
             position: 'top',
@@ -55,7 +33,7 @@ export default function Main(){
                     position: 'top',
                     theme: 'light',
                     waitForEvent: true,
-                    afterHide: () => cookies.set('WelcomeTst', 'yes', { path: '/', maxAge: 1000*24*60*60 })
+                    afterHide: () => cookies.set('Ts_WelcomeTst', 'yes', { path: '/', maxAge: 1000*24*60*60 })
                 });
             }
         });
@@ -72,7 +50,7 @@ export default function Main(){
 
             {/* header */}
             <header id='header'>
-                <Link href='https://awesome-components.demos.mostafa-mdzh.ir/'><a className='headerLink'>Awesome Components</a></Link>
+                <Link href='https://awesome-components.com'><a className='headerLink'>Awesome Components</a></Link>
                 <Link href='https://www.buymeacoffee.com/mostafamdzh'><a className='headerLink' id='coffee'>buy me a coffee! :)</a></Link>
             </header>
 
@@ -104,7 +82,7 @@ export default function Main(){
                         <h3 id='awesome'><Link href='/'>Awesome</Link></h3>
                         <div id='name-versionWrapper'>
                             <h1 id='appName'><Link href='/'>Toast</Link></h1>
-                            <a id='version'>V2.0.4</a>
+                            <a id='version'>V2.0.5</a>
                         </div>
                         <p className='sectionDescription'>React, Angular, Vue, and Typescript compatible toast</p>
 
@@ -390,7 +368,7 @@ export default function Main(){
                 <p>Made with ♡ by <a href='https://github.com/MostafaMDZH'>Mostafa Mohammadzadeh</a></p>
                 <p id='dash'>-</p>
                 <p id='githubLink'>Source on <a href='https://github.com/MostafaMDZH/Awesome-Toast'>Github</a></p>
-                <p id='awesomeComponents'>From <Link href='https://awesome-components.demos.mostafa-mdzh.ir/'><a>Awesome Components</a></Link></p>
+                <p id='awesomeComponents'>From <Link href='https://awesome-components.com'><a>Awesome Components</a></Link></p>
             </footer>
 
         </div>
