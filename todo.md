@@ -1,5 +1,4 @@
 ## Features:
-- Documents: scrollable code segments on mobile
 - Unique id/class
 
 ## Future:
