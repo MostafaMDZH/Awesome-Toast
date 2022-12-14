@@ -82,7 +82,7 @@ export default function Main(){
                         <h3 id='awesome'><Link href='/'>Awesome</Link></h3>
                         <div id='name-versionWrapper'>
                             <h1 id='appName'><Link href='/'>Toast</Link></h1>
-                            <a id='version'>V2.0.5</a>
+                            <a id='version'>V2.0.6</a>
                         </div>
                         <p className='sectionDescription'>React, Angular, Vue, and Typescript compatible toast</p>
 

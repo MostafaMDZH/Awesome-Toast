@@ -1,7 +1,7 @@
 {
   "name": "awesome-toast-component",
   "description": "React, Angular, Vue, and Typescript compatible toast.",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "author": "Mostafa Mohammadzadeh",
   "license": "MIT",
   "main": "src/toast.js",

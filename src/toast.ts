@@ -243,5 +243,5 @@ const Style = `
       display: flex;
       justify-content: center;
     }
-  }/*# sourceMappingURL=toast.css.map */
+  }
 `;

@@ -58,7 +58,7 @@
       display: flex;
       justify-content: center;
     }
-  }/*# sourceMappingURL=toast.css.map */
+  }
 `},6489:function(a,b){"use strict";/*!
  * cookie
  * Copyright(c) 2012-2014 Roman Shtylman
